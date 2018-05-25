@@ -6,7 +6,6 @@ BASE_URL='https://www.instagram.com/'
 LOGIN_URL= BASE_URL + 'accounts/login/ajax/'
 USERNAME= 'ven1376'
 PASSWD= getpass.getpass("Enter IG password: ")
-#USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebkit/537.36 (KHTML, like Gecko)\ Chrome/59.0.3071.115 Safari/537.36'
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'
 session = requests.Session()
 session.headers = {'user-agent': USER_AGENT}
