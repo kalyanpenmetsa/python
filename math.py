@@ -11,4 +11,3 @@ def fibo(n):
         for i in range(1,n-1):
                 fibolist.append(fibolist[i] + fibolist[i-1])
         print(fibolist)
-fibo(50)
