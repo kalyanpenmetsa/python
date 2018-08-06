@@ -3,9 +3,11 @@ import numpy as np
 import sys
 faceFilter = 'data/haarcascades/haarcascade_frontalface_default.xml'
 smileFilter = 'data/haarcascades/haarcascade_smile.xml'
+eyeFilter = 'data/haarcascades/haarcascade_eye.xml'
 
 faceCascade = cv2.CascadeClassifier(faceFilter)
 smileCascade = cv2.CascadeClassifier(smileFilter)
+eyeCascade = cv2.CascadeClassifier(eyeFilter)
 
 cap = cv2.VideoCapture(0)
 cap.set(3, 640)  # set Width
@@ -23,11 +25,13 @@ while True:
         roi_color = vid[y:y + h, x:x + w]
 
         smile = smileCascade.detectMultiScale(frame, scaleFactor=1.7, minNeighbors=22, minSize=(25, 25))
-        # print("Found", len(smile), "smiles!")
         for (x, y, w, h) in smile:
             print("Found", len(smile), "smiles!")
             cv2.rectangle(vid, (x, y), (x + w, y + h), (255, 0, 0), 2)
-
+        eye = eyeCascade.detectMultiScale(frame, scaleFactor=1.7, minNeighbors=22, minSize=(25, 25))
+        for (x, y, w, h) in eye:
+            print("Found", len(eye), "eyes!")
+            cv2.rectangle(vid, (x, y), (x + w, y + h), (255, 0, 0), 2)
     cv2.imshow('frame', vid)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
