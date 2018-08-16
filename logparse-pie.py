@@ -44,4 +44,3 @@ class drawBar:
 pie = drawPie()
 bar = drawBar()
 bar.drawBar([0,1,2],[1,2,4])
-print(bar.yList)
