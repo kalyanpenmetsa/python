@@ -3,10 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class drawPie:
-    def openFile(self,logPath):
-        self.logPath = logPath
-        f = open(logPath)
-        return f.read()
 
     def drawPie(self,explode,labelList,sizeList,autoPct='%1.1f%%',shadow=True,startAngle='90'):
         self.explode = explode
@@ -23,13 +19,6 @@ class drawPie:
             return plt.show()
         else:
             print("len(labelList) not equal to len(sizeList)")
-            print(pie.openFile('error.log'))
-
-#pie.drawPie(logPath,explodeList,labelList,sizeList)
-pie.drawPie([0,0,0,0],['Info','Access','Warning','Error'],[1,2,3,4])
-
-# print(np.arange(3))
-
 
 class drawBar:
     def drawBar(self,xList,yList):
@@ -42,5 +31,6 @@ class drawBar:
             print("len(xList) not equal to len(yList)")
 
 pie = drawPie()
+pie.drawPie([0,0,0,0],['Info','Access','Warning','Error'],[1,2,3,4])
 bar = drawBar()
 bar.drawBar([0,1,2],[1,2,4])
