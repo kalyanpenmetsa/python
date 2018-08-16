@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class drawPie:
-
     def drawPie(self,explode,labelList,sizeList,autoPct='%1.1f%%',shadow=True,startAngle='90'):
         self.explode = explode
         self.labelList = labelList
